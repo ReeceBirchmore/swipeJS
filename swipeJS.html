@@ -1,0 +1,61 @@
+<!doctype html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>panelJS - Swiping Card Panel</title>
+    <meta name="author" content="Reece Birchmore" />
+    <meta name="description" content="panelJS" />
+    <meta name="Resource-type" content="Document" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="mobile-web-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Portsmouth Bus">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="manifest.webmanifest">
+  
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <link rel="stylesheet" type="text/css" href="css.css">
+  </head>
+<body>
+
+
+
+<div class="pageContent" id="pageContent">
+  <section class="main">
+    <!-- Page Content Here -->
+    
+    <!-- End Page Content-->
+  </section>
+ 
+</div>
+<div class="container" >
+  <div class="panelJS" id="panelJS">
+    <section class="panelContent" id ="panelContent">
+          <!-- Panel content here -->
+          <!-- End Panel Content -->
+    </section>
+  </div>
+</div>
+
+
+<script type="text/javascript" src="./swipeJS.js"></script>
+<script type="text/javascript">
+  let config = {
+      elementID: 'panelJS',
+      transitionSpeed: '0.2s', // Transition speed when releasing finger
+      stage1: true,
+      stage2: true,
+      stage0Size: 10, //the size (in percent) taken by the initial stage (minimum 0, maximum 100)
+      stage1Size: 50, //the size (in percent) taken by the middle stage
+      stage2Size: 100, //the size (in percent) taken by the final stage (max 100)
+      introBounce: true, //add a tiny bounce to let people know the card swipes when first loaded
+  }
+  if ("ontouchstart" in document.documentElement) {
+    var panelJS = new panelJS(config);
+  }
+</script>
+
+</body>
+</html>
