@@ -9,16 +9,16 @@
   let config = {
       elementID: 'panelJS',
       transitionSpeed: '0.2s', // Transition speed when releasing finger
-      //opacity: 0.8, //0-1
-      scaleOut: true, //scale content back when sliding to stage 2
       stage1: true,
       stage2: true,
-      stage0Size: -10, //the size (in negative percent) taken by the initial stage (minimum 0)
-      stage1Size: -50, //the size (in negative percent) taken by the middle stage
-      stage2Size: -100, //the size (in negative percent) taken by the final stage (max 100)
+      stage0Size: 10, //the size (in percent) taken by the initial stage (minimum 0, maximum 100)
+      stage1Size: 50, //the size (in percent) taken by the middle stage
+      stage2Size: 100, //the size (in percent) taken by the final stage (max 100)
       introBounce: true, //add a tiny bounce to let people know the card swipes when first loaded
   }
-  var panelJS = new panelJS(config);
+  if ("ontouchstart" in document.documentElement) {
+    var panelJS = new panelJS(config);
+  }
 </script>
 ```
 This is the config section, you can customise it to your need to determine the sizing, availability and special features of the panel on the webpage.
@@ -28,7 +28,6 @@ This is the config section, you can customise it to your need to determine the s
 <div class="pageContent" id="pageContent">
   <section class="main">
     <!-- Page Content Here -->
-    
     <!-- End Page Content-->
   </section>
  
